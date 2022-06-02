@@ -15,7 +15,6 @@ public class UserDto {
     private Long id;
     private String username;
     private String password;
-    private Set<LibraryDto> libraryDtoSet = new HashSet<>();
 
     public UserDto(User user){
         if (user.getId() != null){

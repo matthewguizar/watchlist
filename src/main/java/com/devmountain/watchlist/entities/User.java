@@ -24,9 +24,7 @@ public class User {
 
     @Column
     private String password;
-    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JsonManagedReference
-    private Set<Library> library = new HashSet<>();
+
 
     public User(UserDto userDto) {
         if (userDto.getUsername() !=null){
