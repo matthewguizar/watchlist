@@ -1,20 +1,22 @@
 package com.devmountain.watchlist.dtos;
 
+import com.devmountain.watchlist.entities.Library;
 import com.devmountain.watchlist.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.io.Serializable;
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class UserDto implements Serializable {
     private Long id;
     private String username;
     private String password;
+
 
     public UserDto(User user){
         if (user.getId() != null){
@@ -26,5 +28,6 @@ public class UserDto {
         if (user.getPassword() != null){
             this.password = user.getPassword();
         }
+
     }
 }

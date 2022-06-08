@@ -1,17 +1,22 @@
 package com.devmountain.watchlist.entities;
 
+import com.devmountain.watchlist.dtos.LibraryDto;
 import com.devmountain.watchlist.dtos.UserDto;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "Users")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
@@ -21,19 +26,10 @@ public class User {
 
     @Column(unique = true)
     private String username;
-
     @Column
     private String password;
 
 
-    public User(UserDto userDto) {
-        if (userDto.getUsername() !=null){
-            this.username = userDto.getUsername();
-        }
-        if(userDto.getPassword() != null){
-            this.password = userDto.getPassword();
-        }
-    }
 
     public Long getId() {
         return id;
@@ -58,4 +54,18 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
+    public User(UserDto userDto) {
+        if (userDto.getUsername() !=null){
+            this.username = userDto.getUsername();
+        }
+        if(userDto.getPassword() != null){
+            this.password = userDto.getPassword();
+        }
+
+
+    }
+
 }

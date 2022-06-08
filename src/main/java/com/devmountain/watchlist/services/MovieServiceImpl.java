@@ -14,6 +14,7 @@ public class MovieServiceImpl {
 
 public List<Movie> getAllMovies(){
     List<Movie> movieList = movieRepository.findAll();
+
     return movieList;
 }
 }

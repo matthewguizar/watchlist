@@ -15,7 +15,7 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    private UserRepository userRepositories;
+    private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Override
@@ -23,27 +23,25 @@ public class UserServiceImpl implements UserService {
     public List<String> addUser(UserDto userDto){
         List<String> response = new ArrayList<>();
         User user = new User(userDto);
-        userRepositories.saveAndFlush(user);
-        response.add("http://localhost:8084/home.html");
+        userRepository.saveAndFlush(user);
+        response.add("http://localhost:8080/login.html");
         return response;
     }
     @Override
     public List<String> userLogin(UserDto userDto){
         List<String> response = new ArrayList<>();
-        Optional<User> userOptional = userRepositories.findByUsername(userDto.getUsername());
-        if (userOptional.isPresent()){
-            if(passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())){
-                response.add("http://localhost:8084/home.html");
-                System.out.println("logged in");
+        Optional<User> userOptional = userRepository.findByUsername(userDto.getUsername());
+        if(userOptional.isPresent()){
+            if (passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())) {
+                response.add("http://localhost:8080/home.html");
                 response.add(String.valueOf(userOptional.get().getId()));
             } else {
-                System.out.println("1st");
                 response.add("Username or password incorrect");
             }
         } else {
-            System.out.println("2nd");
             response.add("Username or password incorrect");
         }
         return response;
     }
+
 }

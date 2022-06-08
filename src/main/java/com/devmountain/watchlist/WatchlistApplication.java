@@ -10,6 +10,7 @@ public class WatchlistApplication {
 		SpringApplication.run(WatchlistApplication.class, args);
 
 
+
 	}
 
 
