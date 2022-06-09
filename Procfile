@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.devmountain.WatchlistApplication
+web: java -jar target/watchlist-0.0.1-SNAPSHOT.jar com.devmountain.watchlist
