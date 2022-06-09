@@ -42,18 +42,19 @@ const cardContainer = document.getElementById("cardContainer");
     function createMovieCards(arr) {
         arr.forEach(obj => {
             let noteCard = document.createElement("div")
-            noteCard.innerHTML = `<div class="card-groups" > Top 20 Rated Movies
-    <div class="card w-25 h-50">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/original${obj.posterPath}" alt="Card image cap">
-        <div class="card-body">
-        <h5 class="card-title" data-product="${obj.id}">${obj.title}</h5>
-        <p class="card-text">${obj.overview}</p>
-        <button class="btn btn-primary"onclick=" addMovie(${obj.id})">Add Movie</button>
-        </div>
-        <div class="card-footer">
-         <small class="text-muted">${obj.releaseDate}</small>
-        </div>
-    </div> `
+            noteCard.innerHTML = `
+<div class="card-groups" style="width: 18rem; height: auto">
+    <div class="col">
+       <img class="card-img-top" src="https://image.tmdb.org/t/p/original${obj.posterPath}" alt="Card image cap">
+       <div class="card-body">
+       <h5 class="card-title" data-product="${obj.id}">${obj.title}</h5>
+       <p class="card-text">${obj.overview}</p>
+       <button class="btn btn-primary"onclick=" addMovie(${obj.id})">Add Movie</button>
+       </div>
+       <div class="card-footer">
+        <small class="text-muted">${obj.releaseDate}</small>
+    </div>
+</div> `
         cardContainer.append(noteCard);
         })
     }

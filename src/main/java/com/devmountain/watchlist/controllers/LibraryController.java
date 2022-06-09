@@ -37,7 +37,7 @@ public class LibraryController {
     }
 
     @GetMapping("{userId}")
-        public Optional<Library> getLibrary(@PathVariable Long userId){
+        public List<Library> getLibraryByUserId(@PathVariable Long userId){
         return libraryService.getLibraryByUserId(userId);
     }
 }

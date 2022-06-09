@@ -11,8 +11,14 @@ const favorites = document.getElementById("favorites");
         if (!obj){
             obj = {
                 id: '',
-                movieDto: '',
-                user: '',
+                movie: {
+                    id: '',
+                    overview: '',
+                    title: '',
+                    posterPath: '',
+                    backdropPath: '',
+                    releaseDate: ''
+                },
                 watched: ''
 
             }
@@ -20,8 +26,8 @@ const favorites = document.getElementById("favorites");
     }
 
 
-    const getAllLibraries = async () => {
-        const response = await fetch (`http://localhost:8080/home`,{
+    const getLibrary= async (userId) => {
+        const response = await fetch (`http://localhost:8080/home/${userId}`,{
             method: "GET",
             headers: headers
         })
@@ -36,14 +42,14 @@ const favorites = document.getElementById("favorites");
         arr.forEach(obj => {
             let movieCard = document.createElement("div")
             movieCard.innerHTML = `<div class="card-groups" style="width: 18rem;">
-    <img src="https://image.tmdb.org/t/p/original${obj.movieDto.posterPath} class="card-img-top">
+    <img src="https://image.tmdb.org/t/p/original${obj.movie.posterPath}" class="card-img-top">
     <div class="card-body">
-        <p class="card-text" data-product="${obj.id}"> ${obj.movieDto.title}</p>
-        <p>${obj.movieDto.overview}</p>
+        <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
+        <p>${obj.movie.overview}</p>
     </div>
     </div>`
             favContainer.append(movieCard)
         })
 }
 
-getAllLibraries()
+getLibrary(userId);

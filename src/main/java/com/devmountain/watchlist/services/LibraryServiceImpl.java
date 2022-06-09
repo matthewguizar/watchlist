@@ -59,9 +59,9 @@ public class LibraryServiceImpl {
         return libraryList;
     }
 
-    public Optional<Library> getLibraryByUserId(Long userId) {
-        Optional<Library> libraryOptional = libraryRepository.findLibraryByUserId(userId);
-        return libraryOptional;
+    public List<Library> getLibraryByUserId(Long userId) {
+        List<Library> libraryList = libraryRepository.findLibraryByUserId(userId);
+        return libraryList;
     }
 }
 

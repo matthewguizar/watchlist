@@ -2,6 +2,7 @@ package com.devmountain.watchlist.entities;
 
 import com.devmountain.watchlist.dtos.LibraryDto;
 import com.devmountain.watchlist.dtos.MovieDto;
+import com.devmountain.watchlist.dtos.UserDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,6 +31,7 @@ public class Library {
         this.id = libraryDto.getId();
         this.movie = libraryDto.getMovieDto();
         this.watched = libraryDto.getWatched();
+        this.user = libraryDto.getUser();
 
     }
 
