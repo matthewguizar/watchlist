@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("users/")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -29,9 +29,4 @@ public class UserController {
         return userService.userLogin(userDto);
     }
 
-    @GetMapping("/")
-    public String index (){
-
-        return "Welcome, please pick one.";
-    }
 }
