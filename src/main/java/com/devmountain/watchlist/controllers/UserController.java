@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @PostMapping("register")
+    @PostMapping("/")
     public List<String> addUser(@RequestBody UserDto userDto){
         String passHash = passwordEncoder.encode(userDto.getPassword());
         userDto.setPassword(passHash);
@@ -29,9 +29,4 @@ public class UserController {
         return userService.userLogin(userDto);
     }
 
-    @GetMapping("/")
-    public List<String> lol (){
-
-        return Collections.singletonList("wtf dude");
-    }
 }
