@@ -63,7 +63,6 @@ const url = "https://onmylist.herokuapp.com/"
             headers: headers
         })
             .catch(err => console.error(err))
-        return getLibrary(userId)
     }
 
 getLibrary(userId);
