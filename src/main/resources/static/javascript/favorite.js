@@ -58,7 +58,7 @@ const url = "https://onmylist.herokuapp.com/"
 }
 
     const deleteLibrary = async (libraryId) => {
-        await fetch(`${url}${libraryId}`, {
+        await fetch(url + libraryId, {
             method: "DELETE",
             headers: headers
         })
