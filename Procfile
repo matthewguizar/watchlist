@@ -1,1 +1,1 @@
-web: java -jar target/classes:target/dependency/* --port=$PORT com.devmountain.watchlist
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar
