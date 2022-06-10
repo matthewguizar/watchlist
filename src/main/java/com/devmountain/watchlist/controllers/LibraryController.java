@@ -40,4 +40,8 @@ public class LibraryController {
         public List<Library> getLibraryByUserId(@PathVariable Long userId){
         return libraryService.getLibraryByUserId(userId);
     }
+    @DeleteMapping("{libraryId}")
+        public void deleteLibraryById(@PathVariable Long libraryId){
+        libraryService.deleteLibraryById(libraryId);
+    }
 }

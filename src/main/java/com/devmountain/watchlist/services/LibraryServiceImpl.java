@@ -11,6 +11,7 @@ import com.devmountain.watchlist.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -62,6 +63,11 @@ public class LibraryServiceImpl {
     public List<Library> getLibraryByUserId(Long userId) {
         List<Library> libraryList = libraryRepository.findLibraryByUserId(userId);
         return libraryList;
+    }
+    @Transactional
+    public void deleteLibraryById(Long libraryId){
+        Optional<Library> libraryOptional = libraryRepository.findById(libraryId);
+        libraryOptional.ifPresent(library -> libraryRepository.delete(library));
     }
 }
 

@@ -43,22 +43,27 @@ const url = "https://onmylist.herokuapp.com/"
     const createLibraryCard = (arr) => {
         arr.forEach(obj => {
             let movieCard = document.createElement("div")
-            movieCard.innerHTML = `<div class="card-groups" style="width: 18rem;">
-    <img src="https://image.tmdb.org/t/p/original${obj.movie.posterPath}" class="card-img-top">
-    <div class="card-body">
-        <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
-        <p>${obj.movie.overview}</p>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-           <label class="btn btn-secondary active">
-             <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-            </label>
-              <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-               </label>
+            movieCard.innerHTML = `
+    <div class="card-groups" style="width: 18rem;">
+        <img src="https://image.tmdb.org/t/p/original${obj.movie.posterPath}" class="card-img-top">
+        <div class="card-body">
+            <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
+         <p>${obj.movie.overview}</p>
+         <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button> 
+        
         </div>
     </div>`
             favContainer.append(movieCard)
         })
 }
+
+    const deleteLibrary = async (libraryId) => {
+        await fetch(url + libraryId, {
+            method: "DELETE",
+            headers: headers
+        })
+            .catch(err => console.error(err))
+        return getLibrary(userId)
+    }
 
 getLibrary(userId);
