@@ -25,7 +25,7 @@ public class LibraryServiceImpl {
     @Autowired
     UserRepository userRepository;
 
-
+    @Transactional
     public Long addLibrary(Long userId){
         Optional<User> userOptional = userRepository.findById(userId);
         Library library = new Library();
@@ -36,6 +36,7 @@ public class LibraryServiceImpl {
         return libraryId;
 
     }
+    @Transactional
     public String addMovie(Long libraryId,Long movieId){
         Optional<Movie> movieOptional = movieRepository.findById(movieId);
         Optional<Library> libraryOptional = libraryRepository.findById(libraryId);
