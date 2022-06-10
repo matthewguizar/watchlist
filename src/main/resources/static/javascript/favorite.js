@@ -40,11 +40,12 @@ const url = "https://onmylist.herokuapp.com/"
         createLibraryCard(responseArr)
 }
 const deleteLibrary = async (libraryId) => {
-    await fetch(url + libraryId, {
+   const response = await fetch(url + libraryId, {
         method: "DELETE",
         headers: headers
     })
         .catch(err => console.error(err))
+    console.log(response.json())
 }
 
     const createLibraryCard = (arr) => {
