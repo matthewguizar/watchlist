@@ -13,7 +13,7 @@ const handleRegister = async (e) => {
         username: registerUsername.value,
         password: registerPass.value
     };
-    const response = await fetch(`${url}register`, {
+    const response = await fetch(`${url}users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
