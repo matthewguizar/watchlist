@@ -58,6 +58,7 @@ const deleteLibrary = async (libraryId) => {
             <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
             <p>${obj.movie.overview}</p>
             <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button> 
+            <span>Watched</span>
             <button type="button" class="btn btn-success">${obj.watched}</button>
         </div>
     </div>`
