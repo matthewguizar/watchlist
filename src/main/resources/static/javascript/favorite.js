@@ -48,9 +48,8 @@ const url = "https://onmylist.herokuapp.com/"
         <img src="https://image.tmdb.org/t/p/original${obj.movie.posterPath}" class="card-img-top">
         <div class="card-body">
             <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
-         <p>${obj.movie.overview}</p>
-         <button class="btn btn-danger" onclick="deleteLibrary(${obj})">Delete</button> 
-        
+            <p>${obj.movie.overview}</p>
+            <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button> 
         </div>
     </div>`
             favContainer.append(movieCard)
