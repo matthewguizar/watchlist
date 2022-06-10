@@ -1,1 +1,1 @@
-web: java -jar target/dependency/watchlist-0.0.1-SNAPSHOT.jar --port=$PORT com.devmountain.watchlist
+web: java -jar target/classes:target/dependency/* --port=$PORT com.devmountain.watchlist
