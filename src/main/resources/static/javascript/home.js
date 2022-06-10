@@ -4,7 +4,7 @@ const userId = cookieCArr[1];
 const cardContainer = document.getElementById("cardContainer");
 
 
-
+const url = "https://onmylist.herokuapp.com/"
     const headers = {
         'Content-Type': 'application/json'
     }
