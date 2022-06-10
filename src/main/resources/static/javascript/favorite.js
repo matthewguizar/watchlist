@@ -49,7 +49,7 @@ const url = "https://onmylist.herokuapp.com/"
         <div class="card-body">
             <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
          <p>${obj.movie.overview}</p>
-         <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button> 
+         <button class="btn btn-danger" onclick="deleteLibrary(${obj})">Delete</button> 
         
         </div>
     </div>`
