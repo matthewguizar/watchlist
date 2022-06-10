@@ -32,6 +32,6 @@ public class UserController {
     @GetMapping("/")
     public List<String> lol (){
 
-        return Collections.singletonList("wtf dude");
+        return Collections.singletonList("https://onmylist.heroku.app.com/register.html");
     }
 }
