@@ -24,7 +24,6 @@ const cardContainer = document.getElementById("cardContainer");
     }
 
 
-
     const getTopRated = async () =>{
         const response = await fetch(`http://localhost:8080/home/movies`, {
         method: "GET",
@@ -49,7 +48,7 @@ const cardContainer = document.getElementById("cardContainer");
        <div class="card-body">
        <h5 class="card-title" data-product="${obj.id}">${obj.title}</h5>
        <p class="card-text">${obj.overview}</p>
-       <button class="btn btn-primary"onclick=" addMovie(${obj.id})">Add Movie</button>
+       <button class="btn btn-primary" onclick=" addMovie(${obj.id})">Add Movie</button>
        </div>
        <div class="card-footer">
         <small class="text-muted">${obj.releaseDate}</small>
