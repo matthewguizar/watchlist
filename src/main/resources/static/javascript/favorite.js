@@ -45,6 +45,7 @@ const deleteLibrary = async (libraryId) => {
         headers: headers
     })
         .catch(err => console.error(err))
+    return getLibrary(userId);
 }
 
     const createLibraryCard = (arr) => {
