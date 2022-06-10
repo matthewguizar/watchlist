@@ -16,7 +16,7 @@ const handleSubmit = async (e) => {
         password: loginPassword.value
     };
 
-    const response = await fetch(`${url}users/login`, {
+    const response = await fetch(`${url}login`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
