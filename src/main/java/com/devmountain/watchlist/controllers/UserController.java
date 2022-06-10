@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RestController
-@RequestMapping("users/")
+@RequestMapping("/users/")
 public class UserController {
     @Autowired
     private UserService userService;

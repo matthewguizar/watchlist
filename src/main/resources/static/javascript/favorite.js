@@ -48,6 +48,10 @@ const url = "https://onmylist.herokuapp.com/"
     <div class="card-body">
         <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
         <p>${obj.movie.overview}</p>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+  </label>
     </div>
     </div>`
             favContainer.append(movieCard)
