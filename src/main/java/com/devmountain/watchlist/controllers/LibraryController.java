@@ -26,7 +26,7 @@ public class LibraryController {
         public void addMovie(@PathVariable Long libraryId, @PathVariable Long movieId){
         libraryService.addMovie(libraryId, movieId);
     }
-    @PostMapping("{userId}")
+    @PostMapping("/{userId}")
         public Optional<Long> addLibrary(@PathVariable Long userId){
         return Optional.of(libraryService.addLibrary(userId));
 
@@ -36,7 +36,7 @@ public class LibraryController {
         return libraryService.getAllLibraries();
     }
 
-    @GetMapping("{userId}")
+    @GetMapping("/{userId}")
         public List<Library> getLibraryByUserId(@PathVariable Long userId){
         return libraryService.getLibraryByUserId(userId);
     }

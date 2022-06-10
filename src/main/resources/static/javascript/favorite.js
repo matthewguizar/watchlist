@@ -39,6 +39,13 @@ const url = "https://onmylist.herokuapp.com/"
         console.log(responseArr);
         createLibraryCard(responseArr)
 }
+const deleteLibrary = async (libraryId) => {
+    await fetch(url + libraryId, {
+        method: "DELETE",
+        headers: headers
+    })
+        .catch(err => console.error(err))
+}
 
     const createLibraryCard = (arr) => {
         arr.forEach(obj => {
@@ -55,13 +62,5 @@ const url = "https://onmylist.herokuapp.com/"
             favContainer.append(movieCard)
         })
 }
-
-    const deleteLibrary = async (libraryId) => {
-        await fetch(url + libraryId, {
-            method: "DELETE",
-            headers: headers
-        })
-            .catch(err => console.error(err))
-    }
 
 getLibrary(userId);
