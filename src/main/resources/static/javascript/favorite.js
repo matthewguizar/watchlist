@@ -4,6 +4,8 @@ const userId = cookieCArr[1];
 const favContainer = document.getElementById("fav-container");
 const favorites = document.getElementById("favorites");
 
+const url = "https://onmylist.herokuapp.com/"
+
     const headers = {
         'Content-Type': 'application/json'
     }
@@ -27,7 +29,7 @@ const favorites = document.getElementById("favorites");
 
 
     const getLibrary= async (userId) => {
-        const response = await fetch (`http://localhost:8080/home/${userId}`,{
+        const response = await fetch (`${url}home/${userId}`,{
             method: "GET",
             headers: headers
         })
