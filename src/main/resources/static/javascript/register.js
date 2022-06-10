@@ -2,6 +2,7 @@ const registerForm = document.getElementById("form");
 const registerUsername = document.getElementById("username");
 const registerPass = document.getElementById("pwd");
 
+const url = "https://onmylist.herokuapp.com/"
 const headers = {
     "Content-Type" : "application/json"
 }
@@ -12,7 +13,7 @@ const handleRegister = async (e) => {
         username: registerUsername.value,
         password: registerPass.value
     };
-    const response = await fetch("http://localhost:8080/users/register", {
+    const response = await fetch(`${url}users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
