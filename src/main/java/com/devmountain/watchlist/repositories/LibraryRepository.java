@@ -12,4 +12,5 @@ import java.util.Optional;
 public interface LibraryRepository extends JpaRepository<Library, Long> {
     List<Library> findLibraryByUserId(Long userId);
 
+    boolean isWatched(Library library);
 }
