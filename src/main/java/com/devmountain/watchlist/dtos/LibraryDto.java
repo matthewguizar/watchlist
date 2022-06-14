@@ -23,7 +23,7 @@ public class LibraryDto implements Serializable {
     public LibraryDto(Library library) {
         this.id = library.getId();
         this.movieDto = library.getMovie();
-        this.watched = library.getWatched();
+        this.watched = library.isWatched();
         this.user = library.getUser();
 
     }
