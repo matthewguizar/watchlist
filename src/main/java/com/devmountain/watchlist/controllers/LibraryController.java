@@ -45,4 +45,3 @@ public class LibraryController {
         libraryService.deleteLibraryById(libraryId);
     }
 }
-

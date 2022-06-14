@@ -70,10 +70,5 @@ public class LibraryServiceImpl {
         Optional<Library> libraryOptional = libraryRepository.findById(libraryId);
         libraryOptional.ifPresent(library -> libraryRepository.delete(library));
     }
-    @Transactional
-    public void isWatched(Long libraryId){
-        Optional<Library> libraryOptional = libraryRepository.findById(libraryId);
-        libraryOptional.ifPresent(library -> libraryRepository.isWatched(library));
-    }
 }
 
