@@ -17,7 +17,7 @@ public class LibraryDto implements Serializable {
     private Long id;
     private MovieDto movieDto;
 
-    private boolean watched;
+    private Boolean watched;
     private User user;
 
     public LibraryDto(Library library) {
