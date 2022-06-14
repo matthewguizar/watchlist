@@ -28,7 +28,7 @@ const url = "https://onmylist.herokuapp.com/"
     }
 
 
-    const getLibrary= async (userId) => {
+    const getLibrary = async (userId) => {
         const response = await fetch (`${url}home/${userId}`,{
             method: "GET",
             headers: headers
@@ -45,7 +45,7 @@ const deleteLibrary = async (libraryId) => {
         headers: headers
     })
         .catch(err => console.error(err))
-    return getLibrary(userId);
+    
 }
 
     const createLibraryCard = (arr) => {
