@@ -41,12 +41,12 @@ const url = "https://onmylist.herokuapp.com/"
 }
 
 const deleteLibrary = async (libraryId) => {
-    libraryId.preventDefault();
    await fetch(`${url}home/${libraryId}`, {
         method: "DELETE",
         headers: headers
     })
         .catch(err => console.error(err))
+       location.reload()
     
 }
 
