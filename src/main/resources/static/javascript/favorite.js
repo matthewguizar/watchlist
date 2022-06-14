@@ -66,6 +66,11 @@ const deleteLibrary = async (libraryId) => {
                    Small button
              </button>
             <div class="dropdown-menu">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
             </div>
     </div>`
             favContainer.append(movieCard)
