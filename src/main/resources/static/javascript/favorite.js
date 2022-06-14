@@ -57,19 +57,19 @@ const deleteLibrary = async (libraryId) => {
     <div class="card-groups" style="width: 18rem;">
         <img src="https://image.tmdb.org/t/p/original${obj.movie.posterPath}" class="card-img-top">
         <div class="card-body">
-            <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
+            <p class="card-text" data-product="${obj.id}"> ${obj.movie.title} watched:${obj.watched}</p>
             <p>${obj.movie.overview}</p>
             <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button>  
        </div>
        <form class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1"  value="${!obj.watched}">
-            ${!obj.watched}
+            <label class="form-check-label" for="flexRadioDefault1"  value="true">
+            true
             </label>
       <br>
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-            <label class="form-check-label" for="flexRadioDefault2"  value="${obj.watched}">
-            ${obj.watched}
+            <label class="form-check-label" for="flexRadioDefault2"  value="false">
+            false
             </label>
              <input type="submit" value="Submit">
        </form>
