@@ -61,8 +61,12 @@ const deleteLibrary = async (libraryId) => {
             <p>${obj.movie.overview}</p>
             <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button> 
             <span>Watched</span>
-            <button type="button" class="btn btn-success">${obj.watched}</button>
-        </div>
+             <div class="btn-group">
+             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Small button
+             </button>
+            <div class="dropdown-menu">
+            </div>
     </div>`
             favContainer.append(movieCard)
         })
