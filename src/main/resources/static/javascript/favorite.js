@@ -59,16 +59,19 @@ const deleteLibrary = async (libraryId) => {
         <div class="card-body">
             <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
             <p>${obj.movie.overview}</p>
-            <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button> 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Watched
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dlabel">
-                    <button class="dropdown-item" type="button">True</button>
-                    <button class="dropdown-item" type="button">False</button>
-                    </div>
-                </div>
+            <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button>  
+       </div>
+       <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+            True
+            </label>
+       </div>
+       <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+            False
+            </label>
        </div>
          
     </div>`
