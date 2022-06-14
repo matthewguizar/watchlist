@@ -68,7 +68,7 @@ const deleteLibrary = async (libraryId) => {
             </label>
        </div>
        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
             <label class="form-check-label" for="flexRadioDefault2"  value="${obj.watched}">
             False
             </label>
@@ -78,5 +78,6 @@ const deleteLibrary = async (libraryId) => {
             favContainer.append(movieCard)
         })
 }
+
 
 getLibrary(userId);
