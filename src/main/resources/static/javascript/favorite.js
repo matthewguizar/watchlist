@@ -39,7 +39,9 @@ const url = "https://onmylist.herokuapp.com/"
         console.log(responseArr);
         createLibraryCard(responseArr)
 }
+
 const deleteLibrary = async (libraryId) => {
+    libraryId.preventDefault();
    await fetch(`${url}home/${libraryId}`, {
         method: "DELETE",
         headers: headers
