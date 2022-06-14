@@ -61,23 +61,25 @@ const deleteLibrary = async (libraryId) => {
             <p>${obj.movie.overview}</p>
             <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button>  
        </div>
-       <div class="form-check">
+       <form class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1"  value="${!obj.watched}">
             ${!obj.watched}
             </label>
-       </div>
-       <div class="form-check">
+      <br>
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
             <label class="form-check-label" for="flexRadioDefault2"  value="${obj.watched}">
             ${obj.watched}
             </label>
-       </div>
+             <input type="submit" value="Submit">
+       </form>
          
     </div>`
             favContainer.append(movieCard)
         })
 }
+
+
 
 
 getLibrary(userId);
