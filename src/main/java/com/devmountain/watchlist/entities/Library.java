@@ -30,7 +30,7 @@ public class Library {
     public Library(LibraryDto libraryDto) {
         this.id = libraryDto.getId();
         this.movie = libraryDto.getMovieDto();
-        this.watched = libraryDto.isWatched();
+        this.watched = libraryDto.getWatched();
         this.user = libraryDto.getUser();
 
     }
