@@ -22,7 +22,7 @@ public class Library {
     @Column(name = "movie")
     private MovieDto movie;
     @Column(name = "watched")
-    private Boolean watched;
+    private boolean watched;
     @ManyToOne
     @JsonBackReference
     private User user;
