@@ -2,7 +2,6 @@ package com.devmountain.watchlist.controllers;
 
 import com.devmountain.watchlist.dtos.LibraryDto;
 import com.devmountain.watchlist.entities.Library;
-import com.devmountain.watchlist.entities.User;
 import com.devmountain.watchlist.repositories.LibraryRepository;
 import com.devmountain.watchlist.services.LibraryServiceImpl;
 import com.devmountain.watchlist.services.UserService;
