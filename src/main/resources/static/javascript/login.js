@@ -2,9 +2,7 @@ const loginForm = document.getElementById("login-form");
 const loginUsername = document.getElementById("login-username");
 const loginPassword = document.getElementById("login-pwd");
 
-const url = "https://onmylist.herokuapp.com"
-const test = "http://localhost:8080/"
-
+const url = "https://onmylist.herokuapp.com/"
 
 const headers = {
     'Content-Type': 'application/json'
@@ -18,7 +16,7 @@ const handleSubmit = async (e) => {
         password: loginPassword.value
     };
 
-    const response = await fetch(`${url}/users/login`, {
+    const response = await fetch(`${url}users/login`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers

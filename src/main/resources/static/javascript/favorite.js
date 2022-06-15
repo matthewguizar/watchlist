@@ -4,8 +4,7 @@ const userId = cookieCArr[1];
 const favContainer = document.getElementById("fav-container");
 const favorites = document.getElementById("favorites");
 
-const url = "https://onmylist.herokuapp.com"
-const test = "http://localhost:8080/"
+const url = "https://onmylist.herokuapp.com/"
 
     const headers = {
         'Content-Type': 'application/json'
@@ -30,7 +29,7 @@ const test = "http://localhost:8080/"
 
 
     const getLibrary = async (userId) => {
-        const response = await fetch (`${url}/home/${userId}`,{
+        const response = await fetch (`${url}home/${userId}`,{
             method: "GET",
             headers: headers
         })
@@ -42,7 +41,7 @@ const test = "http://localhost:8080/"
 }
 
 const deleteLibrary = async (libraryId) => {
-   await fetch(`${url}/home/${libraryId}`, {
+   await fetch(`${url}home/${libraryId}`, {
         method: "DELETE",
         headers: headers
     })
