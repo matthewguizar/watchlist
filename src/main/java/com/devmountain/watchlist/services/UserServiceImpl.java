@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
         List<String> response = new ArrayList<>();
         User user = new User(userDto);
         userRepository.saveAndFlush(user);
-        response.add(url + "login.html");
+        response.add(url + "/login.html");
         return response;
     }
     @Override
@@ -38,13 +38,13 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOptional = userRepository.findByUsername(userDto.getUsername());
         if(userOptional.isPresent()){
             if (passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())) {
-                response.add(url + "home.html");
+                response.add(url + "/home.html");
                 response.add(String.valueOf(userOptional.get().getId()));
             } else {
-                response.add(url + "error.html");
+                response.add(url + "/error.html");
             }
         } else {
-            response.add(url + "error.html");
+            response.add(url + "/error.html");
         }
         return response;
     }
