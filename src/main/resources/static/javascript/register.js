@@ -26,7 +26,7 @@ const handleRegister = async (e) => {
         alert("Password is required")
         return false
     }
-    const response = await fetch(`${test}users/register`, {
+    const response = await fetch(`${url}users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers

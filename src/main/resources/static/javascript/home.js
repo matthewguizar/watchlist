@@ -25,7 +25,7 @@ const url = "https://onmylist.herokuapp.com/"
 
 
     const getTopRated = async () =>{
-        const response = await fetch(`${test}home/movies`, {
+        const response = await fetch(`${url}home/movies`, {
         method: "GET",
         headers: headers
     })
@@ -61,7 +61,7 @@ const url = "https://onmylist.herokuapp.com/"
 
 const addMovie = async (movieId) => {
         const id = await addLibrary();
-    const response = await fetch(`${test}home/${id}/${movieId}`, {
+    const response = await fetch(`${url}home/${id}/${movieId}`, {
         method: "POST",
         headers: headers
 
@@ -80,7 +80,7 @@ const handleLogout = () => {
 }
 
 const addLibrary = async () => {
-    const response = await fetch(`${test}home/${userId}`, {
+    const response = await fetch(`${url}home/${userId}`, {
         method: "POST",
         headers: headers
     })

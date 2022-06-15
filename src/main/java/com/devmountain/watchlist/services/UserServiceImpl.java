@@ -21,13 +21,15 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
     @Value("${test.url}")
     private String testUrl;
+    @Value("${main.url}")
+    private String url;
     @Override
     @Transactional
     public List<String> addUser(UserDto userDto){
         List<String> response = new ArrayList<>();
         User user = new User(userDto);
         userRepository.saveAndFlush(user);
-        response.add(testUrl + "login.html");
+        response.add(url + "login.html");
         return response;
     }
     @Override
@@ -36,13 +38,13 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOptional = userRepository.findByUsername(userDto.getUsername());
         if(userOptional.isPresent()){
             if (passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())) {
-                response.add(testUrl + "home.html");
+                response.add(url + "home.html");
                 response.add(String.valueOf(userOptional.get().getId()));
             } else {
-                response.add(testUrl + "error.html");
+                response.add(url + "error.html");
             }
         } else {
-            response.add(testUrl + "error.html");
+            response.add(url + "error.html");
         }
         return response;
     }

@@ -30,7 +30,7 @@ const test = "http://localhost:8080/"
 
 
     const getLibrary = async (userId) => {
-        const response = await fetch (`${test}home/${userId}`,{
+        const response = await fetch (`${url}home/${userId}`,{
             method: "GET",
             headers: headers
         })
@@ -42,7 +42,7 @@ const test = "http://localhost:8080/"
 }
 
 const deleteLibrary = async (libraryId) => {
-   await fetch(`${test}home/${libraryId}`, {
+   await fetch(`${url}home/${libraryId}`, {
         method: "DELETE",
         headers: headers
     })
