@@ -5,6 +5,7 @@ const favContainer = document.getElementById("fav-container");
 const favorites = document.getElementById("favorites");
 
 const url = "https://onmylist.herokuapp.com/"
+const test = "http://localhost:8080/"
 
     const headers = {
         'Content-Type': 'application/json'
@@ -29,7 +30,7 @@ const url = "https://onmylist.herokuapp.com/"
 
 
     const getLibrary = async (userId) => {
-        const response = await fetch (`${url}home/${userId}`,{
+        const response = await fetch (`${test}home/${userId}`,{
             method: "GET",
             headers: headers
         })
@@ -41,7 +42,7 @@ const url = "https://onmylist.herokuapp.com/"
 }
 
 const deleteLibrary = async (libraryId) => {
-   await fetch(`${url}home/${libraryId}`, {
+   await fetch(`${test}home/${libraryId}`, {
         method: "DELETE",
         headers: headers
     })

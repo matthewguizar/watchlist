@@ -3,6 +3,7 @@ const registerUsername = document.getElementById("username");
 const registerPass = document.getElementById("pwd");
 
 const url = "https://onmylist.herokuapp.com/"
+const test = "http://localhost:8080/"
 const headers = {
     "Content-Type" : "application/json"
 }
@@ -13,7 +14,19 @@ const handleRegister = async (e) => {
         username: registerUsername.value,
         password: registerPass.value
     };
-    const response = await fetch(`${url}users/register`, {
+    if (registerUsername.value == "" && registerPass.value == ""){
+        alert("Username and password required")
+        return false
+    }
+    if (registerUsername.value == "") {
+        alert("User name is required")
+        return false
+    }
+    if (registerPass.value == ""){
+        alert("Password is required")
+        return false
+    }
+    const response = await fetch(`${test}users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers

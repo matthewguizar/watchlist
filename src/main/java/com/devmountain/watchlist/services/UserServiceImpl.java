@@ -4,6 +4,7 @@ import com.devmountain.watchlist.dtos.UserDto;
 import com.devmountain.watchlist.entities.User;
 import com.devmountain.watchlist.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +19,15 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Value("${test.url}")
+    private String testUrl;
     @Override
     @Transactional
     public List<String> addUser(UserDto userDto){
         List<String> response = new ArrayList<>();
         User user = new User(userDto);
         userRepository.saveAndFlush(user);
-        response.add("https://onmylist.herokuapp.com/login.html");
+        response.add(testUrl + "login.html");
         return response;
     }
     @Override
@@ -33,13 +36,13 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOptional = userRepository.findByUsername(userDto.getUsername());
         if(userOptional.isPresent()){
             if (passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())) {
-                response.add("https://onmylist.herokuapp.com/home.html");
+                response.add(testUrl + "home.html");
                 response.add(String.valueOf(userOptional.get().getId()));
             } else {
-                response.add("Username or password incorrect");
+                response.add(testUrl + "error.html");
             }
         } else {
-            response.add("Username or password incorrect");
+            response.add(testUrl + "error.html");
         }
         return response;
     }
