@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("")
 public class IndexController {
     @Autowired
     private UserService userService;
 
-@PostMapping("error")
+@PostMapping("/error")
     public List<String> userLogin(@RequestBody UserDto userDto){
     return userService.userLogin(userDto);
 }
