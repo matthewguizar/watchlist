@@ -25,8 +25,7 @@ const handleRegister = async (e) => {
 
     if (response.status === 200){
         window.location.replace(responseArr[0])
-    }
-    if (response.status === 400){
+    } else {
         window.alert("Username already exists, please try again")
     }
 
