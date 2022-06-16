@@ -14,7 +14,7 @@ const handleRegister = async (e) => {
         password: registerPass.value
     };
     validate()
-    const response = await fetch(`${url}users/register`, {
+    const response = await fetch(`https://onmylist.herokuapp.com/users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
