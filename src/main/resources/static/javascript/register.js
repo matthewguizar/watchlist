@@ -23,9 +23,10 @@ const handleRegister = async (e) => {
         .catch(err => console.error(err.message));
 
     const responseArr = await response.json();
-    console.log('step 2')
+    console.log(responseArr)
     if (response.status === 200){
         window.location.replace(responseArr[0])
+        console.log('logged in')
     }
     if (response.status !== 200){
         window.location.replace("https://onmylist.herokuapp.com/error.html")
@@ -34,6 +35,7 @@ const handleRegister = async (e) => {
 
 };
  const validate = (e) => {
+     console.log("checking if pass and username is empty")
      if (registerUsername.value == "" && registerPass.value == ""){
          alert("Username and password required")
          return false
