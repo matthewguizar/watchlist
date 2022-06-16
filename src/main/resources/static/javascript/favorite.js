@@ -57,7 +57,7 @@ const deleteLibrary = async (libraryId) => {
     <div class="card-groups" style="width: 18rem;">
         <img src="https://image.tmdb.org/t/p/original${obj.movie.posterPath}" class="card-img-top">
         <div class="card-body">
-            <p class="card-text" data-product="${obj.id}"> ${obj.movie.title} watched:${obj.watched}</p>
+            <p class="card-text" data-product="${obj.id}"> ${obj.movie.title}</p>
             <p>${obj.movie.overview}</p>
             <button class="btn btn-danger" onclick="deleteLibrary(${obj.id})">Delete</button>  
        </div>      
