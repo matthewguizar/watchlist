@@ -36,10 +36,10 @@ public class UserServiceImpl implements UserService {
                 response.add("https://onmylist.herokuapp.com/home.html");
                 response.add(String.valueOf(userOptional.get().getId()));
             } else {
-                response.add("Username or password incorrect");
+                response.add("https://onmylist.herokuapp.com/error.html");
             }
         } else {
-            response.add("Username or password incorrect");
+            response.add("https://onmylist.herokuapp.com/error.html");
         }
         return response;
     }
