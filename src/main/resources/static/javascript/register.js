@@ -14,19 +14,6 @@ const handleRegister = async (e) => {
         password: registerPass.value
     };
 
-    if (registerUsername.value == "" && registerPass.value == ""){
-        alert("Username and password required")
-        return false
-    }
-    if (registerUsername.value == "") {
-        alert("User name is required")
-        return false
-    }
-    if (registerPass.value == ""){
-        alert("Password is required")
-        return false
-    }
-
     const response = await fetch(`${url}users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
@@ -41,6 +28,18 @@ const handleRegister = async (e) => {
     }
     if (response.status === 500){
         window.alert("Username already exists, please try again")
+    }
+    if (registerUsername.value == "" && registerPass.value == ""){
+        alert("Username and password required")
+        return false
+    }
+    if (registerUsername.value == "") {
+        alert("User name is required")
+        return false
+    }
+    if (registerPass.value == ""){
+        alert("Password is required")
+        return false
     }
 
 };
