@@ -13,6 +13,20 @@ const handleRegister = async (e) => {
         username: registerUsername.value,
         password: registerPass.value
     };
+
+    if (registerUsername.value == "" && registerPass.value == ""){
+        alert("Username and password required")
+        return false
+    }
+    if (registerUsername.value == "") {
+        alert("User name is required")
+        return false
+    }
+    if (registerPass.value == ""){
+        alert("Password is required")
+        return false
+    }
+
     const response = await fetch(`${url}users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
