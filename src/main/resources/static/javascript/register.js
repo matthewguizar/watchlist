@@ -23,7 +23,7 @@ const handleRegister = async (e) => {
         .catch(err => console.error(err.message));
 
     const responseArr = await response.json();
-
+    console.log('step 2')
     if (response.status === 200){
         window.location.replace(responseArr[0])
     }
