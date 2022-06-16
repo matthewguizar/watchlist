@@ -14,34 +14,21 @@ const handleRegister = async (e) => {
         password: registerPass.value
     };
 
-        if (registerUsername.value == "" && registerPass.value == ""){
-            alert("Username and password required")
-            return false
-        }
-        if (registerUsername.value == "") {
-            alert("User name is required")
-            return false
-        }
-        if (registerPass.value == ""){
-            alert("Password is required")
-            return false
-    } else {
-            const response = await fetch(`${url}users/register`, {
-                method: "POST",
-                body: JSON.stringify(bodyObj),
-                headers: headers
-            })
-                .catch(err => console.error(err.message));
+    const response = await fetch(`${url}users/register`, {
+        method: "POST",
+        body: JSON.stringify(bodyObj),
+        headers: headers
+    })
+        .catch(err => console.error(err.message));
 
-            const responseArr = await response.json();
+    const responseArr = await response.json();
 
-            if (response.status === 200) {
-                window.location.replace(responseArr[0])
-            }
-            if (response.status === 400) {
-                window.alert("Username already exists, please try again")
-            }
+    if (response.status === 200){
+        window.location.replace(responseArr[0])
+    }
+    if (response.status === 400){
+        window.alert("Username already exists, please try again")
+    }
 
-        }
 };
 registerForm.addEventListener("submit", handleRegister);
