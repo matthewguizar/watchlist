@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +23,14 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public List<String> addUser(UserDto userDto){
         List<String> response = new ArrayList<>();
-        User user = new User(userDto);
-        userRepository.saveAndFlush(user);
-        response.add("https://onmylist.herokuapp.com/login.html");
+        Optional<User> userOptional = userRepository.findByUsername(String.valueOf(userDto));
+        if (userOptional.isPresent()){
+            response.add("https://onmylist.herokuapp.com/error.html");
+        } else {
+            User user = new User(userDto);
+            userRepository.saveAndFlush(user);
+            response.add("https://onmylist.herokuapp.com/login.html");
+        }
         return response;
     }
     @Override
