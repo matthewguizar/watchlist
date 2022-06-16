@@ -30,4 +30,25 @@ const handleRegister = async (e) => {
     }
 
 };
+ const validate = (e) => {
+     e.preventDefault();
+     let bodyObj = {
+         username: registerUsername.value,
+         password: registerPass.value
+     };
+     if (registerUsername.value == "" && registerPass.value == ""){
+         alert("Username and password required")
+         return false
+     }
+     if (registerUsername.value == "") {
+         alert("User name is required")
+         return false
+     }
+     if (registerPass.value == ""){
+         alert("Password is required")
+         return false
+     }
+ }
+
+
 registerForm.addEventListener("submit", handleRegister);
