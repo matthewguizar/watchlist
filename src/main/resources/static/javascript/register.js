@@ -14,6 +14,7 @@ const handleRegister = async (e) => {
         password: registerPass.value
     };
     validate()
+    console.log('step 1')
     const response = await fetch(`https://onmylist.herokuapp.com/users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
@@ -28,7 +29,7 @@ const handleRegister = async (e) => {
     }
     if (response.status !== 200){
         window.location.replace("https://onmylist.herokuapp.com/error.html")
-        window.alert("Username already exists, please try again")
+        console.log("Username already exists, please try again")
     }
 
 };
