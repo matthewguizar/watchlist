@@ -27,6 +27,7 @@ const handleRegister = async (e) => {
         window.location.replace(responseArr[0])
     }
     if (response.status !== 200){
+        window.location.replace("https://onmylist.herokuapp.com/error.html")
         window.alert("Username already exists, please try again")
     }
 
