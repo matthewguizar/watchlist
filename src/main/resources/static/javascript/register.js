@@ -26,22 +26,9 @@ const handleRegister = async (e) => {
     if (response.status === 200){
         window.location.replace(responseArr[0])
     }
-    if (response.status === 400){
+    if (response.status === 500){
         window.alert("Username already exists, please try again")
-    }
-    if (registerUsername.value == "" && registerPass.value == ""){
-        alert("Username and password required")
-        return false
-    }
-    if (registerUsername.value == "") {
-        alert("User name is required")
-        return false
-    }
-    if (registerPass.value == ""){
-        alert("Password is required")
-        return false
     }
 
 };
-
 registerForm.addEventListener("submit", handleRegister);
