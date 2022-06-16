@@ -23,6 +23,11 @@ public class UserServiceImpl implements UserService {
     public List<String> addUser(UserDto userDto){
         List<String> response = new ArrayList<>();
         User user = new User(userDto);
+        if (user.getUsername().matches(String.valueOf(userDto))){
+            System.out.println("username already exists");
+            response.add("https://onmylist.herokuapp.com/error.html");
+            return response;
+        }
         userRepository.saveAndFlush(user);
         response.add("https://onmylist.herokuapp.com/login.html");
         return response;
