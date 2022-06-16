@@ -15,7 +15,7 @@ const handleRegister = async (e) => {
     };
     validate()
     console.log('step 1')
-    const response = await fetch(`https://onmylist.herokuapp.com/users/register`, {
+    const response = await fetch(`${url}users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
@@ -27,12 +27,8 @@ const handleRegister = async (e) => {
     console.log(responseArr)
     if (response.status === 200){
         window.location.replace(responseArr[0])
-        console.log('registered')
     }
-    if (response.status === 400){
-        window.location.replace("https://onmylist.herokuapp.com/error.html")
-        console.log("Username already exists, please try again")
-    }
+
 
 };
  const validate = (e) => {
