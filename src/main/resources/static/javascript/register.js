@@ -19,6 +19,7 @@ const handleRegister = async (e) => {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
+
     })
         .catch(err => console.error(err.message));
 
@@ -26,9 +27,9 @@ const handleRegister = async (e) => {
     console.log(responseArr)
     if (response.status === 200){
         window.location.replace(responseArr[0])
-        console.log('logged in')
+        console.log('registered')
     }
-    if (response.status !== 200){
+    if (response.status === 400){
         window.location.replace("https://onmylist.herokuapp.com/error.html")
         console.log("Username already exists, please try again")
     }
